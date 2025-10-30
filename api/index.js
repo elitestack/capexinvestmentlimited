@@ -960,37 +960,117 @@ app.get('/api/withdrawals', authenticateToken, async (req, res) => {
 // });
 
 
+// // ===================== Generate Deposit Address =====================
+// app.post('/api/deposit/generate-address', async (req, res) => {
+//   try {
+//     // Extract data from request body
+//     const { currency, network } = req.body;
+
+//     // Static wallet address data (extendable)
+//     const walletAddresses = {
+//       BTC: "bc1qexamplebtcaddress123",
+//       ETH: "0xCb71792514A58D6E1F341FF5ea7fDB35B6139A95",
+//       USDT: {
+//         ERC20: "0xCb71792514A58D6E1F341FF5ea7fDB35B6139A95",
+//         TRC20: "TFtsFjVpdsQaWizUddDLqNituSWBN7ao7P",
+//         BEP20: "0xBEP20ExampleWalletAddress"
+//       },
+//       BNB: "bnb1exampleaddress123",
+//       DOGE: "DQC2y4LCuYpWrthwtqBnkhkFSMdycU5EvD",
+//       TRX: "TExampleTronWalletAddress",
+//       XRP: "rExampleRippleAddress",
+//       BDX: "bdxExampleAddress"
+//     };
+
+//     // Normalize inputs
+//     const selectedCoin = (currency || 'USDT').toUpperCase();
+//     const selectedNetwork = (network || 'ERC20').toUpperCase();
+
+//     // Find the address (check if coin has network submapping)
+//     let address = walletAddresses[selectedCoin];
+//     if (typeof address === 'object') {
+//       address = address[selectedNetwork];
+//     }
+
+//     if (!address) {
+//       return res.status(400).json({
+//         success: false,
+//         message: `No address found for ${selectedCoin} on ${selectedNetwork} network`
+//       });
+//     }
+
+//     // ✅ Successful response
+//     return res.json({
+//       success: true,
+//       currency: selectedCoin,
+//       network: selectedNetwork,
+//       address
+//     });
+
+//   } catch (error) {
+//     console.error('Error generating deposit address:', error);
+//     res.status(500).json({
+//       success: false,
+//       message: 'Error generating deposit address',
+//       error: error.message
+//     });
+//   }
+// });
+
+
 // ===================== Generate Deposit Address =====================
 app.post('/api/deposit/generate-address', async (req, res) => {
   try {
     // Extract data from request body
     const { currency, network } = req.body;
 
-    // Static wallet address data (extendable)
+    // Static wallet address data - CORRECTED STRUCTURE
     const walletAddresses = {
-      BTC: "bc1qexamplebtcaddress123",
-      ETH: "0xCb71792514A58D6E1F341FF5ea7fDB35B6139A95",
+      BTC: {
+        BTC: "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh"
+      },
+      ETH: {
+        ERC20: "0xCb71792514A58D6E1F341FF5ea7fDB35B6139A95"
+      },
       USDT: {
         ERC20: "0xCb71792514A58D6E1F341FF5ea7fDB35B6139A95",
         TRC20: "TFtsFjVpdsQaWizUddDLqNituSWBN7ao7P",
-        BEP20: "0xBEP20ExampleWalletAddress"
+        BEP20: "0x742d35Cc6634C0532925a3b8Dc9F6a7c5D0D7c99"
       },
-      BNB: "bnb1exampleaddress123",
-      DOGE: "DQC2y4LCuYpWrthwtqBnkhkFSMdycU5EvD",
-      TRX: "TExampleTronWalletAddress",
-      XRP: "rExampleRippleAddress",
-      BDX: "bdxExampleAddress"
+      BNB: {
+        BEP20: "bnb1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh"
+      },
+      DOGE: {
+        DOGE: "DQC2y4LCuYpWrthwtqBnkhkFSMdycU5EvD"
+      },
+      TRX: {
+        TRC20: "TExampleTronWalletAddress123456789"
+      },
+      XRP: {
+        XRP: "rExampleRippleAddress123456789012345"
+      },
+      BDX: {
+        BDX: "bdxExampleAddress12345678901234567890"
+      }
     };
 
     // Normalize inputs
     const selectedCoin = (currency || 'USDT').toUpperCase();
     const selectedNetwork = (network || 'ERC20').toUpperCase();
 
-    // Find the address (check if coin has network submapping)
-    let address = walletAddresses[selectedCoin];
-    if (typeof address === 'object') {
-      address = address[selectedNetwork];
+    console.log(`Generating address for: ${selectedCoin} on ${selectedNetwork}`); // Debug log
+
+    // Find the address
+    const coinData = walletAddresses[selectedCoin];
+    
+    if (!coinData) {
+      return res.status(400).json({
+        success: false,
+        message: `Unsupported currency: ${selectedCoin}`
+      });
     }
+
+    const address = coinData[selectedNetwork];
 
     if (!address) {
       return res.status(400).json({
@@ -1016,7 +1096,6 @@ app.post('/api/deposit/generate-address', async (req, res) => {
     });
   }
 });
-
 
 // ==================== ADMIN ROUTES ====================
 
