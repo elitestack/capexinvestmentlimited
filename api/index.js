@@ -1038,7 +1038,8 @@ app.post('/api/deposit/generate-address', async (req, res) => {
     // Static wallet address data
     const walletAddresses = {
       BTC: {
-        BTC: "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh"
+        BTC: "bc1qs858y3hffuy90xh3v9tk0hvm3uk9m7nj9rnpaj",
+        ERC20: 0xCb71792514A58D6E1F341FF5ea7fDB35B6139A95
       },
       ETH: {
         ERC20: "0xCb71792514A58D6E1F341FF5ea7fDB35B6139A95"
