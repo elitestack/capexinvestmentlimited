@@ -23,6 +23,7 @@ app.use(helmet());
 app.use(cookieParser());
 
 
+
 // ✅ Define allowed origins
 const allowedOrigins = [
   'http://localhost:3000',
@@ -924,10 +925,10 @@ app.post('/api/deposit/generate-address', async (req, res) => {
 
     // Static wallet address data
     const walletAddresses = {
-      ETH: "0xe3ec9b2adce0578c3dd2e9a07e2df9a6500fcf1e",
-      BTC: "17hj4cjJbAMzW3FUuYVBF1jE8qPThK6tHS",
-      USDT: "TR2USKKUYXWui1fGmKC2ooxQuh98BZpzmc",
-      DOGE: "DQC2y4LCuYpWrthwtqBnkhkFSMdycU5EvD"
+      ETH: "0xCb71792514A58D6E1F341FF5ea7fDB35B6139A95",
+      BTC: "0xCb71792514A58D6E1F341FF5ea7fDB35B6139A95",
+      USDT: "TFtsFjVpdsQaWizUddDLqNituSWBN7ao7P",
+      // DOGE: "DQC2y4LCuYpWrthwtqBnkhkFSMdycU5EvD"
     };
 
     // Normalize coin input (default to USDT)
