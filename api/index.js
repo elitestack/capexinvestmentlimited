@@ -1050,19 +1050,19 @@ app.post('/api/deposit/generate-address', async (req, res) => {
         BEP20: "0x742d35Cc6634C0532925a3b8Dc9F6a7c5D0D7c99"
       },
       BNB: {
-        BEP20: "bnb1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh"
+        BEP20: "0xCb71792514A58D6E1F341FF5ea7fDB35B6139A95"
       },
       DOGE: {
-        DOGE: "DQC2y4LCuYpWrthwtqBnkhkFSMdycU5EvD"
+        DOGE: "DRXQaGcT2fUTUw2KXnBiyoj2Yu1hMvbD1u"
       },
       TRX: {
-        TRC20: "TExampleTronWalletAddress123456789"
+        TRC20: "TFtsFjVpdsQaWizUddDLqNituSWBN7ao7P"
       },
       XRP: {
-        XRP: "rExampleRippleAddress123456789012345"
+        XRP: "rf5VKPsroBhQ8LHQDTyHx4fZizgY9sieDP"
       },
       BDX: {
-        BDX: "bdxExampleAddress12345678901234567890"
+        BDX: "0xCb71792514A58D6E1F341FF5ea7fDB35B6139A95"
       }
     };
 
