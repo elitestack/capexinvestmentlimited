@@ -1047,7 +1047,7 @@ app.post('/api/deposit/generate-address', async (req, res) => {
       USDT: {
         ERC20: "0xCb71792514A58D6E1F341FF5ea7fDB35B6139A95",
         TRC20: "TFtsFjVpdsQaWizUddDLqNituSWBN7ao7P",
-        BEP20: "0x742d35Cc6634C0532925a3b8Dc9F6a7c5D0D7c99"
+        BEP20: "0xCb71792514A58D6E1F341FF5ea7fDB35B6139A95"
       },
       BNB: {
         BEP20: "0xCb71792514A58D6E1F341FF5ea7fDB35B6139A95"
