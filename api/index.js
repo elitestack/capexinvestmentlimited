@@ -30,7 +30,7 @@ const allowedOrigins = [
   'http://localhost:3001',
   // 'http://192.168.32.20:3000',
   // 'https://resxee.vercel.app',
-  'https://welthandel.vercel.app'
+  'https://capexinvestment.vercel.app'
 ];
 
 // ✅ Configure CORS safely
