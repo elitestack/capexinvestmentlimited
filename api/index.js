@@ -1038,25 +1038,25 @@ app.post('/api/deposit/generate-address', async (req, res) => {
     // Static wallet address data
     const walletAddresses = {
       BTC: {
-        BTC: "bc1qs858y3hffuy90xh3v9tk0hvm3uk9m7nj9rnpaj",
+        BTC: "1MeC5VGymtEfXgQiRTD7K18fdD52BBFWCb",
         // ERC20: 0xCb71792514A58D6E1F341FF5ea7fDB35B6139A95
       },
       ETH: {
-        ERC20: "0xCb71792514A58D6E1F341FF5ea7fDB35B6139A95"
+        ERC20: "0x1df20c37a92b393fad5bc06aff61b17f63a91c25"
       },
       USDT: {
-        ERC20: "0xCb71792514A58D6E1F341FF5ea7fDB35B6139A95",
-        TRC20: "TFtsFjVpdsQaWizUddDLqNituSWBN7ao7P",
-        BEP20: "0xCb71792514A58D6E1F341FF5ea7fDB35B6139A95"
+        ERC20: "0x1df20c37a92b393fad5bc06aff61b17f63a91c25",
+        TRC20: "TXMwRYaqMGDTLCFRBL96ZRr4CfDqYzZxrU",
+        BEP20: "0x1df20c37a92b393fad5bc06aff61b17f63a91c25"
       },
       BNB: {
-        BEP20: "0xCb71792514A58D6E1F341FF5ea7fDB35B6139A95"
+        BEP20: "0x1df20c37a92b393fad5bc06aff61b17f63a91c25"
       },
       DOGE: {
-        DOGE: "DRXQaGcT2fUTUw2KXnBiyoj2Yu1hMvbD1u"
+        DOGE: "DNBi8pvZoPisejdES7ZdrCGLA5KBgMdbPy"
       },
       TRX: {
-        TRC20: "TFtsFjVpdsQaWizUddDLqNituSWBN7ao7P"
+        TRC20: "TZGwHbwXjH6uMAxqMrHpgU8DExQzA8tgY3"
       },
       XRP: {
         XRP: "rf5VKPsroBhQ8LHQDTyHx4fZizgY9sieDP"
